@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Music_Player_Extension">
+                    <items>
+                        <table alignment="left" id="YU8-7D-9L1">
+                            <items>
+                                <tableRow identifier="TableRow" id="MsC-iz-JRS" customClass="TableRowController" customModule="Music_Player_Extension">
+                                    <group key="rootItem" width="1" alignment="left" spacing="8" id="yoD-Bw-ZsR">
+                                        <items>
+                                            <label alignment="left" text="Label" id="pmT-Hm-j25"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dataLabel" destination="pmT-Hm-j25" id="whe-6F-VsU"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <label alignment="left" text="ファイルなし" id="UiV-qy-M6k"/>
+                    </items>
+                    <connections>
+                        <outlet property="NoFileLabel" destination="UiV-qy-M6k" id="QeD-pS-E0G"/>
+                        <outlet property="TableView" destination="YU8-7D-9L1" id="lov-i0-EKG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="107.17391304347825" y="238.30357142857144"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="6Qy-iZ-HYF">
+            <objects>
+                <controller id="Ryq-0B-5bg">
+                    <items>
+                        <label alignment="left" text="ファイルがありません" id="OeK-kG-P41">
+                            <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                        </label>
+                        <separator alignment="left" id="zBq-LX-KzC"/>
+                        <label alignment="left" text="iPhoneをパソコンに" id="HKB-IM-Gbw">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label alignment="left" text="接続し、iTunesから" id="lWu-z8-SpF">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label alignment="left" text="Appファイル共有で" id="m1h-h7-3Ee">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label alignment="left" text="追加できます。" id="aOO-ge-mek">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="370" y="1358"/>
+        </scene>
+        <!--PlayerController-->
+        <scene sceneID="dzO-Xv-mfu">
+            <objects>
+                <controller identifier="PlayerController" id="HfK-qo-iX8" customClass="PlayerController" customModule="Music_Player_Extension">
+                    <items>
+                        <label alignment="left" text="Music Name" id="AHT-5C-Q55"/>
+                        <separator alignment="left" id="i3I-2K-YOy"/>
+                        <label alignment="left" text="一時停止" id="s2S-Es-NGu"/>
+                        <group width="1" alignment="left" id="oO3-KF-1Ft">
+                            <items>
+                                <button width="40" height="40" alignment="left" verticalAlignment="center" hidden="YES" id="Zpe-LY-7AF">
+                                    <string key="title" base64-UTF8="YES">
+COKGkA
+</string>
+                                    <connections>
+                                        <action selector="PushFwdButton" destination="HfK-qo-iX8" id="SGt-9q-RYd"/>
+                                    </connections>
+                                </button>
+                                <button width="40" height="40" alignment="right" verticalAlignment="center" hidden="YES" title="未実装" id="kH6-yf-b9N"/>
+                                <button width="50" height="50" alignment="center" title="▶︎" id="58B-5Y-7PC">
+                                    <connections>
+                                        <action selector="PushPlayButton" destination="HfK-qo-iX8" id="PDl-qF-mb9"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <volumeControlView alignment="center" id="sLr-hU-hjm"/>
+                    </items>
+                    <menu key="menu" id="6QH-q6-Xhz">
+                        <items>
+                            <menuItem title="チュートリアル" icon="info" id="CGq-Hn-Cz0"/>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="BTFwd" destination="Zpe-LY-7AF" id="WTf-QJ-qs3"/>
+                        <outlet property="BTNext" destination="58B-5Y-7PC" id="z5l-Lz-ST0"/>
+                        <outlet property="BTPlayPause" destination="kH6-yf-b9N" id="5Jb-7l-4dS"/>
+                        <outlet property="BTgroup" destination="oO3-KF-1Ft" id="XVo-HK-Yw9"/>
+                        <outlet property="MusicNameLabel" destination="AHT-5C-Q55" id="Xy4-yM-TXB"/>
+                        <outlet property="PlayingLabel" destination="s2S-Es-NGu" id="Grv-El-Wp9"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="445" y="239"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Music_Player" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="806"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Music_Player" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="509"/>
+        </scene>
+    </scenes>
+</document>
